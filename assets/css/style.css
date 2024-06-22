@@ -49,6 +49,27 @@
 }
 
 /*-----------------------------------*\
+  #NAME
+\*-----------------------------------*/
+
+.name {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  font-size: 2rem; /* Adjust this value as needed */
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 1.5rem; /* Smaller font size for mobile devices */
+  }
+}
+
+/*-----------------------------------*\
   #SOCIAL LIST
 \*-----------------------------------*/
 
