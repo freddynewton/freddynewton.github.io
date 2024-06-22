@@ -3,15 +3,8 @@
 \*-----------------------------------*/
 
 /*-----------------------------------*\
-  #CUSTOM PROPERTY
+  #SERVICE LIST
 \*-----------------------------------*/
-
-.social-list {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-}
 
 .service-list {
   display: grid;
@@ -20,7 +13,7 @@
 }
 
 .service-item {
-  background: #f8f8f8;
+  background: #2b2b2b;
   padding: 20px;
   border-radius: 8px;
   display: flex;
@@ -40,23 +33,33 @@
   margin-bottom: 15px;
 }
 
-.service-icon {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) invert(1);
-  display: block; /* Ensures the image is treated as a block element */
-  object-fit: contain; /* Maintains aspect ratio while fitting within dimensions */
-  object-position: center; /* Centers the image within its box */
+.service-icon-box i {
+  font-size: 24px;
+  color: #ffffff;
 }
 
 .service-item-title {
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .service-item-text {
   font-size: 14px;
+  color: #cccccc;
 }
 
+/*-----------------------------------*\
+  #SOCIAL LIST
+\*-----------------------------------*/
+
+
+.social-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+  
 .social-button {
   display: flex;
   align-items: center;
