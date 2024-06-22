@@ -53,14 +53,8 @@
 \*-----------------------------------*/
 
 .name {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
-  font-size: 2rem; /* Adjust this value as needed */
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
+  white-space: normal;
+  word-break: break-all;
 }
 
 @media (max-width: 600px) {
