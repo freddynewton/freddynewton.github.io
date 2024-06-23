@@ -517,10 +517,9 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
-  padding-bottom: 4px;
-  padding-left: 7px;
+  margin-left: 0;  /* Ensures no left margin */
+  padding-inline-start: 0;  /* Removes default padding in some browsers */
 }
-
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 18px;
@@ -1441,7 +1440,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .info_more-btn ion-icon { display: none; }
 
-  .separator { margin: 32px 0; }
+  .separator { margin: 20px 0; }
 
   .contacts-list { gap: 20px; }
 
