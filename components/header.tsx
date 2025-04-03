@@ -76,16 +76,16 @@ export function Header() {
         backdropFilter: !isOpen ? "blur(8px)" : "none",
         boxShadow: isOpen || scrolled ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
       }}
+      initial={{ y: -100 }}
       animate={{ 
+        y: 0,
         backgroundColor: isOpen 
           ? "hsl(var(--background))" 
           : scrolled 
             ? "hsla(var(--background), 0.9)" 
-            : "hsla(var(--background), 0)",
+            : "hsla(var(--background), 0)"
       }}
       transition={{ duration: 0.3 }}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold relative group">
