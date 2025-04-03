@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react"
-import { useState } from "react"
+import { useState, ChangeEvent, FormEvent } from "react"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -19,12 +19,12 @@ export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
@@ -147,7 +147,7 @@ export function Contact() {
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
-                      allowFullScreen=""
+                      allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Map showing Erding, Germany"
