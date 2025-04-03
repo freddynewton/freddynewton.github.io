@@ -105,7 +105,6 @@ export function Skills() {
               "JIRA",
               "Visual Studio",
               "VSCode",
-              "Rider",
               "AR Foundation",
               "ARKit",
               "ARCore",

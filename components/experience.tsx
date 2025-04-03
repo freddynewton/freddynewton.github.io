@@ -10,7 +10,7 @@ export function Experience() {
     {
       title: "Unity Game Developer",
       company: "superswipe.games",
-      period: "March 2024 - Present",
+      period: "March 2025 - Present",
       description: "Working as a Unity Game Developer in a part-time remote position.",
       responsibilities: [
         "Developing mobile games utilizing Unity Cloud Services",
@@ -33,7 +33,7 @@ export function Experience() {
     {
       title: "Virtual Engineer",
       company: "Technology and Strategy",
-      period: "October 2021 - October 2023",
+      period: "October 2021 - October 2024",
       description:
         "At Technology and Strategy, I worked with Mercedes-Benz Tech Motion as a Virtual Engineer, specializing in XR technologies for AR and VR solutions.",
       responsibilities: [

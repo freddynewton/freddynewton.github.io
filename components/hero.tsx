@@ -85,8 +85,8 @@ export function Hero() {
                 </Button>
               </Link>
 
-              <Link href="/Fred Newton Akdogan CV.pdf" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" className="w-full sm:w-auto" size="lg">
+              <Link href="/Fred-Newton-Akdogan-CV.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="w-full sm:w-auto" size="lg">
                   <Download className="mr-2 h-4 w-4" />
                   Resume
                 </Button>
@@ -108,7 +108,8 @@ export function Hero() {
                 transform: showFirstImage ? "rotateY(0deg)" : "rotateY(180deg)"
               }}>
                 <div className="flip-card-front absolute w-full h-full" style={{ 
-                  backfaceVisibility: "hidden"
+                  backfaceVisibility: "hidden",
+                  position: "absolute"
                 }}>
                   <Image
                     src="/images/profile.jpg"
@@ -116,14 +117,15 @@ export function Hero() {
                     fill
                     priority
                     className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 500px"
+                    sizes="(min-width: 1024px) 400px, (min-width: 768px) 300px, 250px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
                 </div>
 
                 <div className="flip-card-back absolute w-full h-full" style={{ 
                   backfaceVisibility: "hidden",
-                  transform: "rotateY(180deg)"
+                  transform: "rotateY(180deg)",
+                  position: "absolute"
                 }}>
                   <Image
                     src="/images/profile2.jpg"
@@ -131,7 +133,7 @@ export function Hero() {
                     fill
                     priority
                     className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 500px"
+                    sizes="(min-width: 1024px) 400px, (min-width: 768px) 300px, 250px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
                 </div>
