@@ -23,39 +23,44 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-muted/30 py-12 md:py-16 border-t border-primary/10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-muted/30 py-12 md:py-16 border-t border-primary/10 relative">
+      {/* Semi-transparent background */}
+      <div className="absolute inset-0 bg-background/50"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div>
+          <div className="backdrop-blur-md bg-background/50 p-6 rounded-lg border border-primary/10">
             <Link href="/" className="text-xl font-bold mb-4 inline-block">
               Fred Newton
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Unity Developer & XR Specialist creating immersive experiences and games that blur the lines between
-              virtual and physical worlds.
+            <p className="text-muted-foreground text-sm">
+              XR Developer & Unity Specialist creating immersive experiences and games that blend the virtual and physical worlds.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-6">
               {socialLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-background hover:bg-primary/10 transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label={link.name}
                 >
                   {link.icon}
-                  <span className="sr-only">{link.name}</span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <div className="backdrop-blur-md bg-background/50 p-6 rounded-lg border border-primary/10">
+            <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -63,30 +68,24 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>Erding, Bavaria, Germany</li>
-              <li>
-                <Link href="mailto:freddakdogan2@gmail.com" className="hover:text-primary transition-colors">
-                  freddakdogan2@gmail.com
-                </Link>
-              </li>
-              <li>
-                <Link href="tel:+4917662031322" className="hover:text-primary transition-colors">
-                  +49 176 62031322
-                </Link>
-              </li>
-            </ul>
+          <div className="backdrop-blur-md bg-background/50 p-6 rounded-lg border border-primary/10">
+            <h3 className="font-semibold mb-4">Get in Touch</h3>
+            <p className="text-muted-foreground text-sm mb-4">
+              Interested in working together or have questions?
+            </p>
+            <Link
+              href="#contact"
+              className="inline-block px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-md transition-colors"
+            >
+              Contact Me
+            </Link>
           </div>
         </div>
 
-        <div className="border-t border-primary/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {currentYear} Fred Newton Akdogan. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center">
-            Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> using Next.js & Tailwind CSS
+        <div className="mt-12 pt-6 border-t border-primary/10 text-center text-muted-foreground text-sm">
+          <p>
+            © {currentYear} Fred Newton Akdogan. Built with{" "}
+            <Heart className="inline-block h-3 w-3 text-red-500 mb-0.5" /> using Next.js & Tailwind CSS.
           </p>
         </div>
       </div>

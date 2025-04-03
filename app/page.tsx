@@ -9,8 +9,8 @@ import { Skills } from "@/components/skills"
 import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
-import { AnimatedBackground } from "@/components/animated-background"
 import { HydrationFix } from "@/components/hydration-fix"
+import { ParticleBackground } from "@/components/particle-background"
 
 export default function Home() {
   // Additional fix for hydration errors from browser extensions like Dark Reader
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <AnimatedBackground />
+      <ParticleBackground />
       <Header />
       <main className="snap-container">
         <section id="hero" className="snap-section">

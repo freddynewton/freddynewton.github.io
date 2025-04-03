@@ -141,8 +141,11 @@ export function Experience() {
   }
 
   return (
-    <section id="experience" className="py-20 md:py-32 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 md:py-32 bg-muted/30 relative">
+      {/* Remove the overall blur and keep the semi-transparent background */}
+      <div className="absolute inset-0 bg-background/50"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -150,7 +153,7 @@ export function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+          <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3 backdrop-blur-md">
             My Journey
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience & Education</h2>
@@ -161,7 +164,7 @@ export function Experience() {
 
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-10">
-            <div className="bg-primary/10 text-primary rounded-full p-2">
+            <div className="bg-primary/10 text-primary rounded-full p-2 backdrop-blur-md">
               <Briefcase className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-bold">Work Experience</h3>
@@ -176,7 +179,8 @@ export function Experience() {
           >
             {workExperience.map((job, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="border border-primary/10 overflow-hidden">
+                {/* Apply the backdrop blur only to the card */}
+                <Card className="border border-primary/10 overflow-hidden backdrop-blur-md bg-background/50">
                   <CardHeader className="bg-primary/5 pb-4">
                     <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
                       <div>
@@ -224,7 +228,7 @@ export function Experience() {
 
         <div>
           <div className="flex items-center gap-3 mb-10">
-            <div className="bg-primary/10 text-primary rounded-full p-2">
+            <div className="bg-primary/10 text-primary rounded-full p-2 backdrop-blur-md">
               <GraduationCap className="h-6 w-6" />
             </div>
             <h3 className="text-2xl font-bold">Education</h3>
@@ -239,7 +243,8 @@ export function Experience() {
           >
             {education.map((edu, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="border border-primary/10">
+                {/* Apply the backdrop blur only to the card */}
+                <Card className="border border-primary/10 backdrop-blur-md bg-background/50">
                   <CardHeader className="bg-primary/5 pb-4">
                     <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
                       <div>
