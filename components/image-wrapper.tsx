@@ -30,13 +30,19 @@ export function ImageWrapper({ src, alt, width, height, className, priority }: I
         return
       }
 
-      // For local images, add proper path handling
+      // For local images, preserve relative paths
       let finalPath = src
       
-      // Add images/ prefix if not present and not starting with /
-      if (!src.includes("/")) {
+      // Only add images/ prefix for plain filenames without any path structure
+      if (!src.includes("/") && !src.includes("\\") && !src.startsWith(".")) {
         finalPath = `/images/${src}`
-      } else if (!src.startsWith("/")) {
+      } 
+      // Don't modify relative paths starting with ./ or ../
+      else if (src.startsWith("./") || src.startsWith("../")) {
+        finalPath = src
+      }
+      // Ensure absolute paths start with /
+      else if (!src.startsWith("/")) {
         finalPath = `/${src}`
       }
       
