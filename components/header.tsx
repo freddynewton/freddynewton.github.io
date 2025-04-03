@@ -67,8 +67,8 @@ export function Header() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 ${
-        scrolled || isOpen ? "bg-background shadow-sm" : "bg-transparent"
-      } transition-all duration-300 ${isOpen ? "" : "backdrop-blur-md"}`}
+        isOpen ? "bg-background shadow-sm" : scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent backdrop-blur-md"
+      } transition-all duration-300`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -88,7 +88,8 @@ export function Header() {
             <AnimatePresence>
               {isOpen && (
                 <motion.div
-                  className="fixed inset-0 top-16 z-40 bg-background"
+                  className="fixed inset-0 top-16 z-40 bg-background border-t border-border"
+                  style={{ backgroundColor: "hsl(var(--background))" }} // Force solid background color
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
