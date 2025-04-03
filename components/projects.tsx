@@ -120,17 +120,17 @@ export function Projects() {
 
         <Tabs defaultValue="All" className="mt-12">
           <div className="flex justify-center mb-12">
-            <TabsList className="bg-muted/50">
-              <TabsTrigger value="All" className="px-6">
+            <TabsList className="bg-muted/50 w-full max-w-md flex">
+              <TabsTrigger value="All" className="flex-1 px-2 sm:px-4">
                 All
               </TabsTrigger>
-              <TabsTrigger value="Games" className="px-6">
+              <TabsTrigger value="Games" className="flex-1 px-2 sm:px-4">
                 Games
               </TabsTrigger>
-              <TabsTrigger value="Programming" className="px-6">
+              <TabsTrigger value="Programming" className="flex-1 px-1 text-xs sm:text-sm sm:px-2">
                 Programming
               </TabsTrigger>
-              <TabsTrigger value="Publications" className="px-6">
+              <TabsTrigger value="Publications" className="flex-1 px-1 text-xs sm:text-sm sm:px-2">
                 Publications
               </TabsTrigger>
             </TabsList>

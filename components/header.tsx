@@ -66,12 +66,26 @@ export function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 ${
-        isOpen ? "bg-background shadow-sm" : scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent backdrop-blur-md"
-      } transition-all duration-300`}
+      className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-300"
+      style={{
+        backgroundColor: isOpen 
+          ? "hsl(var(--background))" 
+          : scrolled 
+            ? "hsla(var(--background), 0.9)" 
+            : "hsla(var(--background), 0)",
+        backdropFilter: !isOpen ? "blur(8px)" : "none",
+        boxShadow: isOpen || scrolled ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+      }}
+      animate={{ 
+        backgroundColor: isOpen 
+          ? "hsl(var(--background))" 
+          : scrolled 
+            ? "hsla(var(--background), 0.9)" 
+            : "hsla(var(--background), 0)",
+      }}
+      transition={{ duration: 0.3 }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold relative group">
@@ -88,12 +102,16 @@ export function Header() {
             <AnimatePresence>
               {isOpen && (
                 <motion.div
-                  className="fixed inset-0 top-16 z-40 bg-background border-t border-border"
-                  style={{ backgroundColor: "hsl(var(--background))" }} // Force solid background color
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 top-16 z-40 border-t border-border"
+                  style={{ 
+                    backgroundColor: "hsl(var(--background))",
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: 1,
+                  }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="container mx-auto px-4 py-8 flex flex-col space-y-6">
                     <nav className="flex flex-col space-y-4">
