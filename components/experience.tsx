@@ -104,10 +104,10 @@ export function Experience() {
 
   const education = [
     {
-      degree: "B.Sc. in Mobile Media (Computer Science)",
+      degree: "B.Sc. in Media Informatics",
       institution: "Hochschule der Medien in Stuttgart",
       period: "September 2017 - February 2021",
-      description: 'Switched to Media Informatics at the "Hochschule der Medien" in Stuttgart.',
+      description: "Started in Mobile Media and switched to Media Informatics. Graduated with a final grade of 1.8. Focused on Game Development, VR Development, and AI throughout my studies.",
     },
     {
       degree: "University Entrance Qualification in Business Administration",
