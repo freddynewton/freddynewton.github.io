@@ -10,6 +10,53 @@ import Image from "next/image"
 export function Hero() {
   // Single state to track which image is currently showing
   const [showFirstImage, setShowFirstImage] = useState(true)
+  
+  // Typewriter effect states
+  const [currentText, setCurrentText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [textIndex, setTextIndex] = useState(0)
+  const [typingSpeed, setTypingSpeed] = useState(100)
+  
+  const phrases = [
+    "Fred Newton",
+    "Freddy",
+    "Father",
+    "Frog Enthusiast"
+  ]
+  
+  // Typewriter effect
+  useEffect(() => {
+    const currentPhrase = phrases[textIndex]
+    
+    const timeout = setTimeout(() => {
+      // If deleting, remove the last character
+      if (isDeleting) {
+        setCurrentText(currentText.substring(0, currentText.length - 1))
+        setTypingSpeed(50) // Faster deletion
+      } else {
+        // If typing, add the next character
+        setCurrentText(currentPhrase.substring(0, currentText.length + 1))
+        setTypingSpeed(100) // Normal typing speed
+      }
+      
+      // If we've completed typing the current phrase
+      if (!isDeleting && currentText === currentPhrase) {
+        // Wait a bit at the end of the phrase
+        setTypingSpeed(1500) // Pause at the end
+        setIsDeleting(true)
+      } 
+      // If we've deleted all characters
+      else if (isDeleting && currentText === "") {
+        setIsDeleting(false)
+        // Move to the next phrase
+        setTextIndex((textIndex + 1) % phrases.length)
+        // Small pause before starting the next word
+        setTypingSpeed(300)
+      }
+    }, typingSpeed)
+    
+    return () => clearTimeout(timeout)
+  }, [currentText, isDeleting, textIndex, typingSpeed, phrases])
 
   const scrollToNextSection = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
@@ -50,8 +97,9 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               Hey, I'm{" "}
-              <span className="text-primary relative">
-                Fred Newton
+              <span className="text-primary relative min-w-[200px] inline-block">
+                {currentText}
+                <span className="inline-block animate-pulse ml-0.5">{!isDeleting ? "|" : ""}</span>
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-primary/30"></span>
               </span>
             </motion.h1>
