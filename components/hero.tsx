@@ -21,7 +21,7 @@ export function Hero() {
     "Fred Newton",
     "Freddy",
     "Father",
-    "Frog Enthusiast"
+    "Frog Enthusiast 🐸"
   ]
   
   // Typewriter effect
@@ -111,7 +111,7 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.5 }}
             >
               I build immersive XR experiences and games that blend the virtual and physical worlds. Specialized in
-              Unity development for iOS and HoloLens platforms.
+              Unity development for iOS and HoloLens platforms. <span className="font-medium text-primary">Currently open to new opportunities!</span>
             </motion.p>
 
             <motion.div
