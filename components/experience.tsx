@@ -28,14 +28,16 @@ export function Experience() {
         "Cross-functional Collaboration",
         "Debugging",
         "Agile Development",
+        "Legacy Code Maintenance",
+        "Git",
       ],
     },
     {
-      title: "Virtual Engineer",
+      title: "Virtual Engineer | Augmented Reality Developer",
       company: "Technology and Strategy",
       period: "October 2021 - October 2024",
       description:
-        "At Technology and Strategy, I worked with Mercedes-Benz Tech Motion as a Virtual Engineer, specializing in XR technologies for AR and VR solutions.",
+        "At Technology and Strategy, I worked at **Mercedes-Benz Tech Motion** as a Virtual Engineer | Augmented Reality Developer, specializing in XR technologies for AR and VR solutions.",
       responsibilities: [
         "Implemented localization solutions for XR platforms, integrating modular localization with backend systems",
         "Enhanced performance and minimized memory usage on HoloLens and iOS platforms",
@@ -64,6 +66,14 @@ export function Experience() {
         "Visual Studio",
         "Agile/Scrum",
         "JIRA",
+        "Confluence",
+        "Localization",
+        "Modular localization",
+        "Backend integration",
+        "Memory optimization",
+        "Model tracking",
+        "Client project management",
+        "Requirement gathering",
       ],
     },
     {
@@ -87,6 +97,7 @@ export function Experience() {
         "iOS and Android development",
         "Prototyping",
         "Interactive Advertising",
+        "Client project development",
       ],
     },
     {
@@ -98,7 +109,7 @@ export function Experience() {
         "Added new features to existing software solutions",
         "Maintained and improved the software to ensure optimal performance and functionality",
       ],
-      skills: ["C#", ".NET", "WPF", "Software feature development", "Software maintenance"],
+      skills: ["C#", ".NET", "WPF", "Software feature development", "Software maintenance", "Code Generation"],
     },
   ]
 
