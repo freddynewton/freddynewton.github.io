@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ImageWrapper } from "@/components/image-wrapper" // Added import
+import { ImageWrapper } from "@/components/image-wrapper"
 
 // Add this utility function to extract YouTube video ID
 function getYoutubeVideoId(url: string): string | null {
@@ -57,6 +57,16 @@ const projects = [
     link: "https://github.com/freddynewton/BachelorarbeitLatex/blob/main/Latex/template_Article.pdf",
     category: "Publications",
     tags: ["Game AI", "Research", "Influence Maps"],
+  },
+  {
+    title: "I USED TO",
+    date: "Feb, 2021",
+    description: 
+      "A game created during the Global Game Jam 2021 - Stuttgart with the theme \"Lost and Found\" in less than 72 hours. The basic concept is - as a player, to find yourself again after you have lost yourself.",
+    image: "iusedto.png",
+    link: "https://freddynewton.itch.io/i-used-to",
+    category: "Games",
+    tags: ["Unity", "Game Jam", "Game Development", "Pixel Art"],
   },
   {
     title: "Bone Vault",

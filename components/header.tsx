@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react"
+import { Menu, X, Github, Linkedin, Twitter, Gamepad2 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useMobile } from "@/hooks/use-mobile"
 
@@ -62,6 +62,7 @@ export function Header() {
       icon: <Linkedin className="h-5 w-5" />,
     },
     { name: "Twitter", href: "https://x.com/endlessloop___", icon: <Twitter className="h-5 w-5" /> },
+    { name: "Itch.io", href: "https://freddynewton.itch.io/", icon: <Gamepad2 className="h-5 w-5" /> },
   ]
 
   return (

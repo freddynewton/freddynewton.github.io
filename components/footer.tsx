@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Heart } from "lucide-react"
+import { Github, Linkedin, Twitter, Heart, Gamepad2 } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,6 +12,7 @@ export function Footer() {
       icon: <Linkedin className="h-5 w-5" />,
     },
     { name: "Twitter", href: "https://x.com/endlessloop___", icon: <Twitter className="h-5 w-5" /> },
+    { name: "Itch.io", href: "https://freddynewton.itch.io/", icon: <Gamepad2 className="h-5 w-5" /> },
   ]
 
   const quickLinks = [
