@@ -37,7 +37,7 @@ export function Experience() {
       company: "Technology and Strategy",
       period: "October 2021 - October 2024",
       description:
-        "At Technology and Strategy, I worked at **Mercedes-Benz Tech Motion** as a Virtual Engineer | Augmented Reality Developer, specializing in XR technologies for AR and VR solutions.",
+        "At Technology and Strategy, I worked at Mercedes-Benz Tech Motion as a Virtual Engineer | Augmented Reality Developer, specializing in XR technologies for AR and VR solutions.",
       responsibilities: [
         "Implemented localization solutions for XR platforms, integrating modular localization with backend systems",
         "Enhanced performance and minimized memory usage on HoloLens and iOS platforms",
