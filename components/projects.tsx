@@ -66,7 +66,7 @@ const projects = [
     image: "iusedto.png",
     link: "https://freddynewton.itch.io/i-used-to",
     category: "Games",
-    tags: ["Unity", "Game Jam", "Game Development", "Pixel Art"],
+    tags: ["Unity", "Game Jam", "Game Development"],
   },
   {
     title: "Bone Vault",
