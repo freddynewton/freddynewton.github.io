@@ -75,6 +75,16 @@ export function Experience() {
         "Client project management",
         "Requirement gathering",
       ],
+      projects: [
+        {
+          title: "Mercedes-Benz Tech Motion XR Projects",
+          url: "https://www.mercedes-benz-tech-motion.com/PROJECTS-PRODUCTS/"
+        },
+        {
+          title: "Mercedes-Benz Tech Motion Demo Video",
+          url: "https://youtu.be/4wiog1XajxE?si=-02LXj5p3AB-yFc2&t=276"
+        }
+      ]
     },
     {
       title: "Unity Developer - Student Trainee",
@@ -226,6 +236,45 @@ export function Experience() {
                             <Badge key={i} variant="secondary" className="bg-secondary/50 text-secondary-foreground">
                               {skill}
                             </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {job.projects && (
+                      <div className="mt-6">
+                        <h4 className="font-semibold mb-3 text-lg">Project Links:</h4>
+                        <div className="flex flex-wrap gap-4">
+                          {job.projects.map((project, i) => (
+                            <a 
+                              href={project.url} 
+                              key={i}
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="group transition-all hover:opacity-90"
+                            >
+                              <div className="w-full max-w-[200px] overflow-hidden rounded-md border border-primary/10">
+                                <div className="relative aspect-video bg-muted/50">
+                                  {project.url.includes('youtu') ? (
+                                    <img 
+                                      src={`https://img.youtube.com/vi/${project.url.split('v=')[1]?.split('&')[0]}/mqdefault.jpg`}
+                                      alt={project.title} 
+                                      className="object-cover w-full h-full transition-transform group-hover:scale-105"
+                                      loading="lazy"
+                                    />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center p-4 bg-primary/5">
+                                      <div className="text-primary text-sm text-center font-medium">
+                                        {project.title}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="p-2 bg-secondary/30 text-xs font-medium text-center truncate">
+                                  {project.title}
+                                </div>
+                              </div>
+                            </a>
                           ))}
                         </div>
                       </div>
