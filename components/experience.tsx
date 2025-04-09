@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, GraduationCap, Calendar } from "lucide-react"
+import { ImageWrapper } from "@/components/image-wrapper"
 
 export function Experience() {
   const workExperience = [
@@ -77,12 +78,12 @@ export function Experience() {
       ],
       projects: [
         {
-          title: "Mercedes-Benz Tech Motion XR Project Gallery",
+          title: "XR-Plattform Gallery",
           url: "https://www.mercedes-benz-tech-motion.com/PROJECTS-PRODUCTS/",
           image: "/xrp-project-mercedes benz.jpg"
         },
         {
-          title: "Mercedes-Benz Tech Motion XR Demo",
+          title: "XR-Plattform Demovideo",
           url: "https://youtu.be/4wiog1XajxE?si=-02LXj5p3AB-yFc2&t=276",
           image: "/XRP-Video.png"
         }
@@ -257,12 +258,15 @@ export function Experience() {
                             >
                               <div className="w-full max-w-[220px] overflow-hidden rounded-md border border-primary/10 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-primary/30">
                                 <div className="relative aspect-video overflow-hidden">
-                                  <img 
-                                    src={project.image} 
-                                    alt={project.title} 
-                                    className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
-                                    loading="lazy"
-                                  />
+                                  <div className="w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:brightness-110">
+                                    <ImageWrapper 
+                                      src={project.image}
+                                      alt={project.title}
+                                      width={320}
+                                      height={180}
+                                      className="object-cover w-full h-full"
+                                    />
+                                  </div>
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end">
                                     <div className="p-3 text-xs text-white font-medium w-full">
                                       View {project.title.includes("Video") ? "Demo" : "Project"}
