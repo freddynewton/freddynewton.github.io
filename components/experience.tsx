@@ -80,12 +80,12 @@ export function Experience() {
         {
           title: "XR-Plattform Gallery",
           url: "https://www.mercedes-benz-tech-motion.com/PROJECTS-PRODUCTS/",
-          image: "/xrp-project-mercedes benz.jpg"
+          image: "/images/xrp-project-mercedes benz.jpg"
         },
         {
           title: "XR-Plattform Demovideo",
           url: "https://youtu.be/4wiog1XajxE?si=-02LXj5p3AB-yFc2&t=276",
-          image: "/XRP-Video.png"
+          image: "/images/XRP-Video.png"
         }
       ]
     },
