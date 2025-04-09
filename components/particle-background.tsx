@@ -49,6 +49,7 @@ export function ParticleBackground() {
     // Create particles
     const particles: Particle[] = []
     const particleCount = Math.min(window.innerWidth / 6, 180) // More particles for better visibility
+    const highlightRadius = 120 // Radius around mouse for highlighting particles
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -84,24 +85,32 @@ export function ParticleBackground() {
           const dy = mousePosition.y - particle.y
           distanceToMouse = Math.sqrt(dx * dx + dy * dy)
         }
-        const isHighlighted = distanceToMouse < 120
+        
+        // Highlight particles only based on distance to mouse
+        const isHighlighted = distanceToMouse < highlightRadius
 
         // Draw particle
         ctx.beginPath()
         ctx.arc(
           particle.x, 
           particle.y, 
-          isHighlighted ? particle.size * 1.5 : particle.size, 
+          particle.size, // No size change 
           0, 
           Math.PI * 2
         )
 
-        // Set color based on theme with gradient
+        // Set color based on theme
         // Reduced transparency by 20% (multiplier 0.8)
         const color = theme === "dark" ? "144, 238, 144" : "0, 128, 0" // Light green or dark green
-        const particleOpacity = isHighlighted 
-          ? Math.min(1, particle.opacity * 2) // Brighter when highlighted
-          : particle.opacity * 1.3 * 0.8 // Increased opacity but reduced by 20%
+        
+        // Only adjust opacity based on distance to mouse
+        let particleOpacity = particle.opacity * 0.8 // Base opacity reduced by 20%
+        
+        if (isHighlighted) {
+          // Gradually increase opacity as distance to mouse decreases
+          const opacityBoost = 1 - (distanceToMouse / highlightRadius)
+          particleOpacity = Math.min(1, particleOpacity + opacityBoost * 0.5)
+        }
         
         ctx.fillStyle = `rgba(${color}, ${particleOpacity})`
         ctx.fill()
@@ -114,19 +123,19 @@ export function ParticleBackground() {
           const dy = particles[i].y - particles[j].y
           const distance = Math.sqrt(dx * dx + dy * dy)
 
-          if (distance < 150) { // Increased connection distance
-            // Check if either particle is near mouse
+          if (distance < 150) { // Connection distance
+            // Check if connection is near mouse
             let isNearMouse = false
+            let mouseDistance = Infinity
+            
             if (isMouseInCanvas) {
-              const d1 = Math.sqrt(
-                Math.pow(mousePosition.x - particles[i].x, 2) + 
-                Math.pow(mousePosition.y - particles[i].y, 2)
-              )
-              const d2 = Math.sqrt(
-                Math.pow(mousePosition.x - particles[j].x, 2) + 
-                Math.pow(mousePosition.y - particles[j].y, 2)
-              )
-              isNearMouse = d1 < 120 || d2 < 120
+              // Calculate the distance from the midpoint of the connection to the mouse
+              const midX = (particles[i].x + particles[j].x) / 2
+              const midY = (particles[i].y + particles[j].y) / 2
+              const dxMouse = mousePosition.x - midX
+              const dyMouse = mousePosition.y - midY
+              mouseDistance = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse)
+              isNearMouse = mouseDistance < highlightRadius
             }
 
             ctx.beginPath()
