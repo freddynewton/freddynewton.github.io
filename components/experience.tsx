@@ -77,12 +77,14 @@ export function Experience() {
       ],
       projects: [
         {
-          title: "Mercedes-Benz Tech Motion XR Projects",
-          url: "https://www.mercedes-benz-tech-motion.com/PROJECTS-PRODUCTS/"
+          title: "Mercedes-Benz Tech Motion XR Project Gallery",
+          url: "https://www.mercedes-benz-tech-motion.com/PROJECTS-PRODUCTS/",
+          image: "/xrp-project-mercedes benz.jpg"
         },
         {
-          title: "Mercedes-Benz Tech Motion Demo Video",
-          url: "https://youtu.be/4wiog1XajxE?si=-02LXj5p3AB-yFc2&t=276"
+          title: "Mercedes-Benz Tech Motion XR Demo",
+          url: "https://youtu.be/4wiog1XajxE?si=-02LXj5p3AB-yFc2&t=276",
+          image: "/XRP-Video.png"
         }
       ]
     },
@@ -251,26 +253,23 @@ export function Experience() {
                               key={i}
                               target="_blank" 
                               rel="noopener noreferrer" 
-                              className="group transition-all hover:opacity-90"
+                              className="group transition-all duration-300"
                             >
-                              <div className="w-full max-w-[200px] overflow-hidden rounded-md border border-primary/10">
-                                <div className="relative aspect-video bg-muted/50">
-                                  {project.url.includes('youtu') ? (
-                                    <img 
-                                      src={`https://img.youtube.com/vi/${project.url.split('v=')[1]?.split('&')[0]}/mqdefault.jpg`}
-                                      alt={project.title} 
-                                      className="object-cover w-full h-full transition-transform group-hover:scale-105"
-                                      loading="lazy"
-                                    />
-                                  ) : (
-                                    <div className="w-full h-full flex items-center justify-center p-4 bg-primary/5">
-                                      <div className="text-primary text-sm text-center font-medium">
-                                        {project.title}
-                                      </div>
+                              <div className="w-full max-w-[220px] overflow-hidden rounded-md border border-primary/10 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-primary/30">
+                                <div className="relative aspect-video overflow-hidden">
+                                  <img 
+                                    src={project.image} 
+                                    alt={project.title} 
+                                    className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                                    loading="lazy"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end">
+                                    <div className="p-3 text-xs text-white font-medium w-full">
+                                      View {project.title.includes("Video") ? "Demo" : "Project"}
                                     </div>
-                                  )}
+                                  </div>
                                 </div>
-                                <div className="p-2 bg-secondary/30 text-xs font-medium text-center truncate">
+                                <div className="p-2 bg-secondary/30 text-xs font-medium text-center truncate transition-colors duration-300 group-hover:bg-primary/20">
                                   {project.title}
                                 </div>
                               </div>
