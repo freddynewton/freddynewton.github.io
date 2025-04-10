@@ -32,6 +32,18 @@ export function Experience() {
         "Legacy Code Maintenance",
         "Git",
       ],
+      projects: [
+        {
+          title: "SumoVolley Game Website",
+          url: "https://sumovolley.com/",
+          image: "/images/SumoVolley Website.png"
+        },
+        {
+          title: "SumoVolley Game Trailer",
+          url: "https://www.youtube.com/watch?v=zI_7kwy4W88",
+          image: "/images/SumoVolley Trailer.png"
+        }
+      ]
     },
     {
       title: "Virtual Engineer | Augmented Reality Developer",
